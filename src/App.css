@@ -60,7 +60,7 @@ h1 {
 .lin {
   margin-left: 30vw !important;
   margin-right: 20vw !important;
-  margin-top: 0.5vw !important;
+  margin-top: 0.7vw !important;
 }
 #time {
   flex: 1;
@@ -135,4 +135,85 @@ h2 {
     width: 75vw;
     height: 65vw;
   }
+}
+
+p {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  color: #bbbbbb;
+  align-self: flex-start;
+}
+.lin2 {
+  background-color: #bbbbbb !important;
+  height: 4px !important;
+  margin-top: 8px !important;
+}
+.p2 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+  align-self: flex-start;
+  margin-top: 14px;
+}
+.inp {
+  display: flex;
+  flex-direction: row;
+  width: 28vw;
+}
+.settingofinp {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 8px;
+
+  justify-content: center;
+  align-items: center;
+}
+.p3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  margin: 5px;
+}
+.inputbox {
+  margin: 10px;
+  flex: 1;
+  width: 8vw;
+  padding: 1vw;
+  background-color: #efefef;
+  border-style: none;
+}
+.divofsetting {
+  width: 28vw;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+}
+.ok {
+  width: 5vw;
+  height: 3vw;
+  align-self: center;
+  border-style: solid;
+  background-color: transparent;
+  margin-top: 10px;
+}
+.ok:hover {
+  background-color: #373737;
+  cursor: pointer;
+}
+.biglin {
+  background-color: blanchedalmond !important;
+  margin-left: 30vw !important;
+  margin-right: 20vw !important;
+  transform: scaleY(2);
+  width: 1px;
+  position: relative;
+  top: -1px;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Popup from "reactjs-popup";
 import logo from "./logo.svg";
 import "./App.css";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
@@ -15,18 +16,45 @@ class App extends React.Component {
     longbreakTimer: 10,
     timestarted: false,
     selectedItem: 1,
+    maxpomodoro: 0,
+    maxshort: 0,
+    maxlong: 0,
+  };
+
+  componentDidMount() {
+    this.setState({
+      maxpomodoro: this.state.pomodoroTimer,
+      maxshort: this.state.shortbreakTimer,
+      maxlong: this.state.longbreakTimer,
+    });
+  }
+
+  onNumberChange = (e) => {
+    this.setState({
+      pomodoroTimer: e.target.value,
+      maxpomodoro: e.target.value,
+    });
+  };
+  shortchanger = (x) => {
+    this.setState({ shortbreakTimer: x.target.value });
+  };
+  longchanger = (y) => {
+    this.setState({ longbreakTimer: y.target.value });
   };
 
   pomodoro = () => {
-    this.setState({ selectedItem: 1 });
+    this.setState({ selectedItem: 1, timestarted: false });
+    clearInterval(this.interval);
   };
 
   short = () => {
-    this.setState({ selectedItem: 2 });
+    this.setState({ selectedItem: 2, timestarted: false });
+    clearInterval(this.interval);
   };
 
   long = () => {
-    this.setState({ selectedItem: 3 });
+    this.setState({ selectedItem: 3, timestarted: false });
+    clearInterval(this.interval);
   };
 
   beep = () => {
@@ -56,6 +84,7 @@ class App extends React.Component {
           pomodoroTimer,
           shortbreakTimer,
           longbreakTimer,
+          timestarted,
           x,
         } = this.state;
         x = x + 1;
@@ -90,11 +119,27 @@ class App extends React.Component {
             }
             break;
         }
+        if (pomodoroTimer == 0) {
+          clearInterval(this.interval);
+          pomodoroTimer = this.state.maxpomodoro;
+          timestarted = false;
+        }
+        if (shortbreakTimer == 0) {
+          clearInterval(this.interval);
+          shortbreakTimer = this.state.maxshort;
+          timestarted = false;
+        }
+        if (longbreakTimer == 0) {
+          clearInterval(this.interval);
+          longbreakTimer = this.state.maxlong;
+          timestarted = false;
+        }
         this.setState({
           selectedItem,
           pomodoroTimer,
           shortbreakTimer,
           longbreakTimer,
+          timestarted,
           x,
         });
       }, 1000);
@@ -108,26 +153,33 @@ class App extends React.Component {
       shortbreakTimer,
       longbreakTimer,
       timestarted,
+      maxpomodoro,
+      maxshort,
+      maxlong,
     } = this.state;
     var mainClass = "";
     var sec = 0;
     var buttonTxt = timestarted ? "STOP" : "START";
-
+    var widthdivider = 0;
     switch (selectedItem) {
       case 1:
         mainClass = "pomodoro";
         sec = pomodoroTimer;
+        widthdivider = ((maxpomodoro - pomodoroTimer) / maxpomodoro) * 50 + "%";
         break;
       case 2:
         mainClass = "short";
         sec = shortbreakTimer;
+        widthdivider = ((maxshort - shortbreakTimer) / maxshort) * 50 + "%";
         break;
       case 3:
         mainClass = "long";
         sec = longbreakTimer;
+        widthdivider = ((maxlong - longbreakTimer) / maxlong) * 50 + "%";
         break;
     }
 
+    console.log(widthdivider);
     return (
       <div className={"App " + mainClass}>
         <div className="nav">
@@ -136,16 +188,75 @@ class App extends React.Component {
             <h1>Pomofocus</h1>
           </div>
           <div id="nav2">
-            <Button
-              variant="contained"
-              className="buttonset"
-              startIcon={<SettingsOutlinedIcon />}
+            <Popup
+              trigger={
+                <Button
+                  variant="contained"
+                  className="buttonset"
+                  startIcon={<SettingsOutlinedIcon />}
+                >
+                  setting
+                </Button>
+              }
+              position="top center"
+              modal
+              contentStyle={{
+                backgroundColor: "white",
+                width: "30vw",
+                height: "25vw",
+                display: "flex",
+                flexDirection: "column",
+              }}
             >
-              setting
-            </Button>
+              {(close) => (
+                <div className="divofsetting">
+                  <p>Timer setting </p>
+
+                  <Divider className="lin2"></Divider>
+                  <p className="p2">Time (minutes)</p>
+                  <div className="inp">
+                    <div className="settingofinp">
+                      <label className="p3">pomodor</label>
+                      <input
+                        type="number"
+                        value={this.state.maxpomodoro}
+                        onChange={this.onNumberChange}
+                        className="inputbox"
+                      />
+                    </div>
+                    <div className="settingofinp">
+                      <label className="p3">Short break</label>
+                      <input
+                        type="number"
+                        value={this.state.shortbreakTimer}
+                        onChange={this.shortchanger}
+                        className="inputbox"
+                      />
+                    </div>
+                    <div className="settingofinp">
+                      <label className="p3">Long break</label>
+                      <input
+                        type="text"
+                        name="number"
+                        value={this.state.longbreakTimer}
+                        onChange={this.longchanger}
+                        className="inputbox"
+                      />
+                    </div>
+                  </div>
+                  <button className="ok" onClick={close}>
+                    OK
+                  </button>
+                </div>
+              )}
+            </Popup>
           </div>
         </div>
-        <Divider className="lin"></Divider>
+        <div className="divContainer">
+          <Divider className="lin"></Divider>
+          <Divider className="biglin" style={{ width: widthdivider }}></Divider>
+        </div>
+
         <div id="time">
           <div id="timestart">
             <div className="button123">
