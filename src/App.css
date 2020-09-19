@@ -87,7 +87,8 @@ h1 {
   align-items: center;
 }
 #timenum {
-  background-color: cyan;
+  background-color: rosybrown;
+  border-radius: 20px;
   height: 50%;
 }
 #buttonstart {
@@ -178,7 +179,6 @@ p {
   color: #bbbbbb;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
   margin: 5px;
 }
 .inputbox {
@@ -194,7 +194,8 @@ p {
   height: 17vw;
   display: flex;
   flex-direction: column;
-  background-color: red !important;
+  background-color: crimson !important;
+  border-radius: 20px;
 }
 .ok {
   width: 5vw;
@@ -220,25 +221,23 @@ p {
 
 @media (max-width: 500px) {
   #timestart {
-    background-color: brown !important;
     width: 70vw;
     height: 80vw;
     margin-bottom: 60vw;
   }
   .b1 {
-    font-size: 5vw;
+    font-size: 3vw;
   }
   .b2 {
-    font-size: 5vw;
+    font-size: 3vw;
   }
   .b2 {
-    font-size: 5vw;
+    font-size: 3vw;
   }
   h2 {
     font-size: 12vw;
   }
   .divofsetting {
-    background-color: red !important;
     width: 80vw;
     height: 40vh !important;
     margin-top: -50vw !important;
@@ -260,11 +259,11 @@ p {
     margin-left: 5vw;
   }
   .p3 {
-    font-size: 11px;
+    font-size: 1px;
     flex: 1;
     margin-top: -2vw;
     font-size: 14px;
-    margin-left: -5vw;
+    margin-left: 0vw;
     margin: 5px;
   }
   .inputbox {
@@ -284,19 +283,18 @@ p {
 }
 @media (min-width: 503px) and (max-width: 899px) {
   #timestart {
-    background-color: brown !important;
     width: 70vw;
     height: 50vw;
     margin-bottom: 65vw;
   }
 
   .divofsetting {
-    background-color: blue !important;
     width: 60vw !important;
     height: 30vh !important;
     margin-top: -50vw;
     margin-left: -34vw;
     padding: 20px;
+    border-radius: 20px;
   }
   p {
     font-size: 2vw;
