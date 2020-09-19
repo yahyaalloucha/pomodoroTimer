@@ -79,7 +79,6 @@ h1 {
   height: 25vw;
   background-color: rgba(255, 255, 255, 0.2) !important;
   color: white !important;
-  margin-bottom: 13vw;
 }
 .button123 {
   display: flex;
@@ -129,7 +128,7 @@ h2 {
     margin-left: 5vw;
   }
   #nav2 {
-    margin-right: 5 vw;
+    margin-right: 5vw;
   }
   #timestart {
     width: 75vw;
@@ -192,9 +191,10 @@ p {
 }
 .divofsetting {
   width: 28vw;
-  height: 25vw;
+  height: 17vw;
   display: flex;
   flex-direction: column;
+  background-color: red !important;
 }
 .ok {
   width: 5vw;
@@ -202,7 +202,7 @@ p {
   align-self: center;
   border-style: solid;
   background-color: transparent;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 .ok:hover {
   background-color: #373737;
@@ -216,4 +216,214 @@ p {
   width: 1px;
   position: relative;
   top: -1px;
+}
+
+@media (max-width: 500px) {
+  #timestart {
+    background-color: brown !important;
+    width: 70vw;
+    height: 80vw;
+    margin-bottom: 60vw;
+  }
+  .b1 {
+    font-size: 5vw;
+  }
+  .b2 {
+    font-size: 5vw;
+  }
+  .b2 {
+    font-size: 5vw;
+  }
+  h2 {
+    font-size: 12vw;
+  }
+  .divofsetting {
+    background-color: red !important;
+    width: 80vw;
+    height: 40vh !important;
+    margin-top: -50vw !important;
+    margin-left: -34vw;
+    border-radius: 20px;
+  }
+  p {
+    font-size: 5vw;
+    margin-top: 8vw;
+    margin-left: 5vw;
+  }
+  .p2 {
+    font-size: 5vw;
+
+    margin-left: 5vw;
+  }
+  .lin2 {
+    margin-top: -0.5vw !important;
+    margin-left: 5vw;
+  }
+  .p3 {
+    font-size: 11px;
+    flex: 1;
+    margin-top: -2vw;
+    font-size: 14px;
+    margin-left: -5vw;
+    margin: 5px;
+  }
+  .inputbox {
+    flex: 1;
+    margin-left: 4vw;
+  }
+  .ok {
+    width: 20vw;
+    height: 6vw !important;
+    font-size: 10px;
+    margin-top: 0vw;
+  }
+  .settingofinp {
+    align-items: center;
+    margin-left: 2vw;
+  }
+}
+@media (min-width: 503px) and (max-width: 899px) {
+  #timestart {
+    background-color: brown !important;
+    width: 70vw;
+    height: 50vw;
+    margin-bottom: 65vw;
+  }
+
+  .divofsetting {
+    background-color: blue !important;
+    width: 60vw !important;
+    height: 30vh !important;
+    margin-top: -50vw;
+    margin-left: -34vw;
+    padding: 20px;
+  }
+  p {
+    font-size: 2vw;
+    margin-top: 0vw;
+    margin-left: 5vw;
+  }
+  .p2 {
+    font-size: 2vw;
+
+    margin-left: 5vw;
+  }
+  .lin2 {
+    margin-top: 3vw !important;
+    margin-left: 2vw;
+  }
+  .p3 {
+    font-size: 11px;
+    flex: 1;
+    margin-top: -2vw;
+    font-size: 14px;
+    margin-left: -5vw;
+    margin: 5px;
+  }
+  .inputbox {
+    flex: 1;
+    margin-left: 4vw;
+  }
+  .ok {
+    width: 10vw;
+    height: 10vw;
+    font-size: 10px;
+    margin-top: 6vw;
+  }
+  .settingofinp {
+    align-items: center;
+    margin-left: 2vw;
+  }
+}
+@media (min-width: 900px) and (max-width: 1300px) {
+  .App {
+    background-color: blue;
+  }
+  #timestart {
+    background-color: brown !important;
+    width: 80vw;
+    height: 35vw;
+    margin-bottom: 90vw;
+  }
+  .b1 {
+    font-size: 2vw;
+  }
+  .b2 {
+    font-size: 2vw;
+  }
+  .b2 {
+    font-size: 2vw;
+  }
+  h2 {
+    font-size: 12vw;
+  }
+  .lin {
+    height: 2vw !important;
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+    margin-top: 0.7vw !important;
+  }
+  .biglin {
+    height: 1vw !important;
+    top: -10px;
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+  }
+  .divContainer {
+    margin-top: 1vw;
+  }
+  #b2 {
+    width: 10vw;
+    height: 3vw;
+  }
+  .divofsetting {
+    background-color: blue !important;
+    width: 60vw !important;
+    height: 30vh !important;
+    margin-top: -62vw;
+    margin-left: -34vw;
+    padding: 20px;
+  }
+  p {
+    font-size: 5vw;
+    margin-top: 3vw;
+    margin-left: 5vw;
+  }
+  .p2 {
+    font-size: 5vw;
+
+    margin-left: 5vw;
+  }
+  .lin2 {
+    margin-top: -0.5vw !important;
+    margin-left: 5vw;
+  }
+  .p3 {
+    font-size: 1px;
+    flex: 1;
+    margin-top: -2vw;
+    font-size: 24px;
+    margin-left: 4vw !important;
+    margin: 5px;
+  }
+  .inputbox {
+    flex: 1;
+    margin-left: 5vw;
+
+    font-size: 2vw;
+  }
+  .ok {
+    width: 10vw;
+    height: 10vw;
+    font-size: 30px;
+    margin-top: 3vw;
+  }
+  .settingofinp {
+    align-items: center;
+    margin-left: 2vw;
+  }
+  #buttonstart {
+    height: 0vw;
+    width: 20vw;
+  }
 }

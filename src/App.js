@@ -179,6 +179,8 @@ class App extends React.Component {
         break;
     }
 
+    var wd = window.innerWidth;
+
     console.log(widthdivider);
     return (
       <div className={"App " + mainClass}>
@@ -201,11 +203,12 @@ class App extends React.Component {
               position="top center"
               modal
               contentStyle={{
-                backgroundColor: "white",
-                width: "30vw",
-                height: "25vw",
+                backgroundColor: "transparent",
+                padding: "0px",
+                width: "0px",
                 display: "flex",
                 flexDirection: "column",
+                borderWidth: "0px",
               }}
             >
               {(close) => (
