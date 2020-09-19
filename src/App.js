@@ -1,10 +1,10 @@
 import React from "react";
 import Popup from "reactjs-popup";
-import logo from "./logo.svg";
+
 import "./App.css";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import Button from "@material-ui/core/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
+
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import Divider from "@material-ui/core/Divider";
 
@@ -91,9 +91,9 @@ class App extends React.Component {
         switch (selectedItem) {
           case 1:
             pomodoroTimer = pomodoroTimer - 1;
-            if (pomodoroTimer == 0) {
+            if (pomodoroTimer === 0) {
               this.beep();
-              if (x % 6 == 0) {
+              if (x % 6 === 0) {
                 selectedItem = 3;
                 longbreakTimer = 10;
               } else {
@@ -104,7 +104,7 @@ class App extends React.Component {
             break;
           case 2:
             shortbreakTimer = shortbreakTimer - 1;
-            if (shortbreakTimer == 0) {
+            if (shortbreakTimer === 0) {
               this.beep();
               selectedItem = 1;
               pomodoroTimer = 25;
@@ -112,24 +112,26 @@ class App extends React.Component {
             break;
           case 3:
             longbreakTimer = longbreakTimer - 1;
-            if (longbreakTimer == 0) {
+            if (longbreakTimer === 0) {
               this.beep();
               selectedItem = 1;
               pomodoroTimer = 25;
             }
             break;
+          default:
+            break;
         }
-        if (pomodoroTimer == 0) {
+        if (pomodoroTimer === 0) {
           clearInterval(this.interval);
           pomodoroTimer = this.state.maxpomodoro;
           timestarted = false;
         }
-        if (shortbreakTimer == 0) {
+        if (shortbreakTimer === 0) {
           clearInterval(this.interval);
           shortbreakTimer = this.state.maxshort;
           timestarted = false;
         }
-        if (longbreakTimer == 0) {
+        if (longbreakTimer === 0) {
           clearInterval(this.interval);
           longbreakTimer = this.state.maxlong;
           timestarted = false;
@@ -177,9 +179,9 @@ class App extends React.Component {
         sec = longbreakTimer;
         widthdivider = ((maxlong - longbreakTimer) / maxlong) * 50 + "%";
         break;
+      default:
+        break;
     }
-
-    var wd = window.innerWidth;
 
     console.log(widthdivider);
     return (
