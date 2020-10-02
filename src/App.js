@@ -13,7 +13,7 @@ class App extends React.Component {
     x: 1,
     pomodoroTimer: 25,
     shortbreakTimer: 5,
-    longbreakTimer: 10,
+    longbreakTimer: 5,
     timestarted: false,
     selectedItem: 1,
     maxpomodoro: 0,
@@ -31,15 +31,21 @@ class App extends React.Component {
 
   onNumberChange = (e) => {
     this.setState({
-      pomodoroTimer: e.target.value,
+      pomodoroTimer: e.target.value * 60,
       maxpomodoro: e.target.value,
     });
   };
   shortchanger = (x) => {
-    this.setState({ shortbreakTimer: x.target.value });
+    this.setState({
+      shortbreakTimer: x.target.value * 60,
+      maxshort: x.target.value,
+    });
   };
   longchanger = (y) => {
-    this.setState({ longbreakTimer: y.target.value });
+    this.setState({
+      longbreakTimer: y.target.value * 60,
+      maxlong: y.target.value,
+    });
   };
 
   pomodoro = () => {
@@ -233,7 +239,7 @@ class App extends React.Component {
                       <label className="p3">Short break</label>
                       <input
                         type="number"
-                        value={this.state.shortbreakTimer}
+                        value={this.state.maxshort}
                         onChange={this.shortchanger}
                         className="inputbox"
                       />
@@ -241,9 +247,8 @@ class App extends React.Component {
                     <div className="settingofinp">
                       <label className="p3">Long break</label>
                       <input
-                        type="text"
-                        name="number"
-                        value={this.state.longbreakTimer}
+                        type="number"
+                        value={this.state.maxlong}
                         onChange={this.longchanger}
                         className="inputbox"
                       />
